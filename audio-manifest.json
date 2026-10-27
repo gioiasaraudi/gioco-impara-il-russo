@@ -2,7 +2,7 @@
   "project": "Trallalla 3D Arcade",
   "entrypoint": "index.html",
   "audio_directory": "audio/",
-  "audio_file_count": 2202,
+  "audio_file_count": 2207,
   "audio_assets": [
     {
       "file": "audio/sb_audio_clips_conversation_prompt.mp3",
@@ -4830,9 +4830,34 @@
       "sha256": "e4d13f1692486477bceca1b78b9df99a22e4aa63d23dbc61a59c95abad374c43"
     },
     {
+      "file": "audio/tr_neural_pack_audio_1529.mp3",
+      "bytes": 6140,
+      "sha256": "555f1f9eb6d3de2a1c0e8d646b8cec0181a7d75a2e8e01f6e0170e00754ecaf1"
+    },
+    {
       "file": "audio/tr_neural_pack_audio_153.mp3",
       "bytes": 5708,
       "sha256": "ae78f58d05e3f2e2c426b4e171cec9ccaeda82339a4b11956a3797bae26c98c0"
+    },
+    {
+      "file": "audio/tr_neural_pack_audio_1530.mp3",
+      "bytes": 7580,
+      "sha256": "1e377dc1b3d9cfc99a9561c34a33aee128e2e8ce777f6f6ef984db839d4ff598"
+    },
+    {
+      "file": "audio/tr_neural_pack_audio_1531.mp3",
+      "bytes": 3692,
+      "sha256": "361ac1b378be8b7adc8aae82b7ae28dfad660e5a968bed2b2ba0602f48905d40"
+    },
+    {
+      "file": "audio/tr_neural_pack_audio_1532.mp3",
+      "bytes": 5708,
+      "sha256": "a6ea673688b8c76ce8b06943c5340be4ada4d395741eec94a41c3c8776ab0d78"
+    },
+    {
+      "file": "audio/tr_neural_pack_audio_1533.mp3",
+      "bytes": 3692,
+      "sha256": "6f1abecf8f02d27cce13db680b221c5c6cbc7d9e7f413bf0aec5b2b5e855d3d1"
     },
     {
       "file": "audio/tr_neural_pack_audio_154.mp3",
