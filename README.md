@@ -1,19 +1,24 @@
 # Trallalla 3D Arcade
 
-Versione pronta per GitHub Pages, con gli audio MP3 estratti dall’HTML e collegati tramite percorsi relativi.
+Gioco statico in italiano per imparare il russo. Si pubblica direttamente con GitHub Pages e non richiede compilazione né dipendenze.
 
-## Pubblicazione su GitHub Pages
+## Struttura del progetto
 
-1. Estrai tutto il contenuto dello ZIP.
-2. Carica **tutti** i contenuti di questa cartella nella root del repository GitHub (non solo `index.html`).
-3. In GitHub apri **Settings → Pages**.
-4. In **Build and deployment**, scegli **Deploy from a branch**, branch `main` e cartella `/ (root)`, poi salva.
-5. Apri l’URL pubblicato da GitHub Pages.
+- `index.html` — struttura della pagina e caricamento delle risorse nell’ordine necessario.
+- `css/base.css` — stile generale e componenti condivisi.
+- `css/settings.css` — impostazioni e feedback.
+- `css/map.css` — percorso e mappa dei livelli.
+- `css/akinator.css` e `css/genie.css` — minigioco del genio e sue illustrazioni.
+- `js/game.js` — contenuti del corso, logica delle attività, audio, progressi e interfaccia.
+- `js/data/audio-voices.js` — registrazioni vocali incorporate e relativi dati.
+- `js/data/family-art.js` — illustrazioni e dati della foto di famiglia.
+- `js/data/world-art.js` — illustrazioni e dati della mappa.
+- `audio/` — registrazioni MP3 utilizzate dal gioco.
+- `audio-manifest.json` — inventario e hash SHA-256 delle registrazioni MP3.
+- `.nojekyll` — evita filtri Jekyll durante la pubblicazione.
 
-## Struttura
+Gli stili sono caricati nell’ordine base, impostazioni, mappa e minigioco. Gli script dati in `js/data/` devono restare prima di `js/game.js`. I percorsi sono relativi, quindi funzionano anche quando GitHub Pages pubblica il progetto sotto il percorso del repository.
 
-- `index.html` — gioco completo, con la spiegazione animata dell’accento sulla О e gli audio collegati a file esterni.
-- `audio/` — file MP3 utilizzati dal gioco. Non rinominare né spostare questa cartella.
-- `audio-manifest.json` — elenco e hash SHA-256 degli audio inclusi.
+## Pubblicazione
 
-Tutti i percorsi audio sono relativi (`audio/nomefile.mp3`), quindi funzionano su GitHub Pages anche quando il sito è pubblicato sotto il percorso di un repository. Non aprire `index.html` separatamente dalla cartella `audio/`: carica l’intera struttura.
+Pubblica l’intera cartella sulla branch `main` e configura GitHub Pages su `/(root)`. Non spostare o rinominare `audio/` senza aggiornare i percorsi nel codice e nel manifesto.
