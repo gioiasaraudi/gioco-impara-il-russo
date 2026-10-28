@@ -11040,5 +11040,5 @@
       "sha256": "43cba2b89ee158ac3720fa4916fcc5ce6f01bcb5da85b3a82b241843ef2c5e42"
     }
   ],
-  "notes": "Audio originally embedded in the HTML has been externalized into MP3 files. The HTML references these with relative audio/... paths for GitHub Pages."
+  "notes": "The game uses relative audio paths. MP3 recordings live in audio/; locally bundled neural voice data is kept in js/data/audio-voices.js."
 }
