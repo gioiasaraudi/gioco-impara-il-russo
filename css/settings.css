@@ -1,0 +1,10 @@
+.tr-feedback-settings{margin-top:20px}
+.tr-feedback-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:12px 0;border-bottom:1px solid var(--bd);cursor:pointer}
+.tr-feedback-row>span{min-width:0}.tr-feedback-row b{display:block;font-size:16px;line-height:1.4}.tr-feedback-row small{display:block;font-size:13px;line-height:1.4;color:var(--fg);margin-top:3px}
+.tr-feedback-row input{appearance:none;-webkit-appearance:none;flex:0 0 48px;width:48px;height:28px;margin:0;border:1px solid var(--bd);border-radius:20px;background:var(--bd);position:relative;cursor:pointer}
+.tr-feedback-row input::before{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(20,34,74,.22)}
+.tr-feedback-row input:checked{background:var(--ac);border-color:var(--ac)}.tr-feedback-row input:checked::before{transform:translateX(20px)}
+.tr-feedback-row input:focus-visible{outline:2px solid var(--fg);outline-offset:4px}.tr-feedback-row input:disabled{opacity:.5}
+@media(prefers-reduced-motion:no-preference){.tr-feedback-row input{transition:background .14s ease-out}.tr-feedback-row input::before{transition:transform .14s ease-out}}
+.tr-feedback-row:has(input:disabled){cursor:default}.tr-feedback-row input:disabled{cursor:default}
+.tr-quiet-button{margin-top:16px}.tr-feedback-more{margin-top:12px}.tr-feedback-more>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:650}
