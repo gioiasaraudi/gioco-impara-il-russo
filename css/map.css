@@ -1,0 +1,18 @@
+/* The zones blend along one upward route; there are no chapter tabs. */
+body[data-tr-surface="map"]{--tr-world-1:#f5e9d0;--tr-world-2:#dfede0;--tr-world-3:#dfeaf8;--tr-world-4:#f3e2e7;background:var(--tr-map-page,var(--tr-world-1))}
+body[data-tr-surface="map"] .tr-topbar{position:sticky;top:0;z-index:40;background:var(--tr-map-page,var(--tr-world-1));padding:6px 12px 10px;margin-top:0}
+.tr-map-continuous .tr-map-route{animation:none;overflow:clip;border-radius:24px;margin-top:0;background-color:var(--tr-world-1)}
+.tr-map-continuous .tr-map-position{position:sticky;top:60px;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:64px;padding:6px 10px;background:var(--tr-map-page,var(--tr-world-1));border-bottom:1px solid rgba(20,34,74,.14)}
+.tr-map-position>span{min-width:0}.tr-map-position b{display:block;font-size:14px;line-height:1.4}.tr-map-position small{display:block;font-size:11px;line-height:1.4;color:var(--fg);margin-top:2px}.tr-map-position button{min-height:44px;flex:none;font-size:12px;padding:8px}
+.tr-world-gate{position:absolute;left:0;right:0;height:176px;display:flex;align-items:center;isolation:isolate;z-index:2;scroll-margin-top:138px}
+.tr-world-gate>div{position:relative;z-index:2;padding-left:49px;max-width:64%;min-width:0}
+.tr-world-gate h2{font-size:21px;line-height:1.15;margin:0 0 8px;color:var(--map-ink)}.tr-world-gate p{font-size:13px;line-height:1.4;margin:0 0 8px;color:var(--map-ink);max-width:19ch}
+.tr-world-gate .tr-map-chapter-count{color:var(--map-muted);font-size:11px}.tr-world-gate progress{display:block;width:100%;max-width:140px;height:5px;margin-top:7px;accent-color:#1f4e9c}
+.tr-world-gate .tr-chapter-landmark{position:absolute;right:-10px;top:20px;width:44%;max-width:205px;margin:0;z-index:1}
+.tr-map-continuous .tr-map-stop-name{color:var(--map-ink);text-shadow:none}.tr-map-continuous .tr-map-stop-state{color:var(--map-muted)}
+.tr-map-continuous .tr-map-stop{scroll-margin-top:140px}.tr-map-continuous .tr-map-intro{top:84px}
+@media(max-width:899px){.tr-map-continuous{display:flex;flex-direction:column}.tr-map-continuous .tr-map-region{order:0;width:100%}.tr-map-continuous .tr-map-intro{order:1;padding:24px 0 10px}.tr-map-continuous .tr-map-position{margin:0 -4px}.tr-map-continuous .tr-map-companion{margin-top:16px}}
+@media(max-width:360px){.tr-map-position b{font-size:13px}.tr-map-position button .tr-action-label{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}.tr-map-position button{width:44px;height:44px;padding:10px}.tr-world-gate h2{font-size:19px}.tr-world-gate>div{padding-left:44px;max-width:64%}.tr-world-gate .tr-chapter-landmark{right:-12px;width:46%}}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) body[data-tr-surface="map"]{--tr-world-1:#34313e;--tr-world-2:#1d3835;--tr-world-3:#22334f;--tr-world-4:#3c2d43}:root:not([data-theme="light"]) .tr-map-continuous{--map-ink:#edf2f7;--map-muted:#cad4e5}}
+:root[data-theme="dark"] body[data-tr-surface="map"]{--tr-world-1:#34313e;--tr-world-2:#1d3835;--tr-world-3:#22334f;--tr-world-4:#3c2d43}:root[data-theme="dark"] .tr-map-continuous{--map-ink:#edf2f7;--map-muted:#cad4e5}
+@media(prefers-reduced-motion:no-preference){body[data-tr-surface="map"],body[data-tr-surface="map"] .tr-topbar,.tr-map-position{transition:background-color .18s ease-out}}
