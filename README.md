@@ -17,6 +17,10 @@ Gioco statico in italiano per imparare il russo. Si pubblica direttamente con Gi
 - `audio-manifest.json` — inventario e hash SHA-256 delle registrazioni MP3.
 - `.nojekyll` — evita filtri Jekyll durante la pubblicazione.
 
+## Genio delle parole
+
+Il genio sceglie le domande con un modello probabilistico e l'entropia attesa; quando indovina o l'utente gli insegna la parola pensata, aggiorna i dati salvati nel browser. L'implementazione JavaScript indipendente prende ispirazione dal metodo di [OpenAkinator](https://github.com/DoricRedPanda/OpenAkinator), ma non include il suo codice C né il database inglese di persone e domande.
+
 Gli stili sono caricati nell’ordine base, impostazioni, mappa e minigioco. Gli script dati in `js/data/` devono restare prima di `js/game.js`. I percorsi sono relativi, quindi funzionano anche quando GitHub Pages pubblica il progetto sotto il percorso del repository.
 
 ## Pubblicazione
