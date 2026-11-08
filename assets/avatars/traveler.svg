@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" style="--avatar-color:#c8323c;--avatar-skin:#f1c7a5"><defs>
+  <symbol id="avatar-base" viewBox="0 0 100 120">
+    <ellipse cx="50" cy="110" rx="25" ry="5" fill="#14224a" opacity=".12"/>
+    <path d="M37 84h11v22a6 6 0 0 1-12 0zM52 84h11v22a6 6 0 0 1-12 0z" fill="var(--avatar-skin,#f1c7a5)" stroke="#693f36" stroke-width="2"/>
+    <path d="M34 103h14v6a5 5 0 0 1-5 5h-9a4 4 0 0 1 0-8zM52 103h14v6a5 5 0 0 1-5 5h-9a4 4 0 0 1 0-8z" fill="#263a60"/>
+    <path d="M34 55c-8 4-13 11-16 22l8 4 13-14M66 55c8 4 13 11 16 22l-8 4-13-14" fill="var(--avatar-skin,#f1c7a5)" stroke="#693f36" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 44v12" stroke="#693f36" stroke-width="3"/>
+    <path d="M32 56q18-10 36 0l7 30q-25 11-50 0z" fill="var(--avatar-skin,#f1c7a5)" stroke="#693f36" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="50" cy="28" r="20" fill="var(--avatar-skin,#f1c7a5)" stroke="#693f36" stroke-width="2.5"/>
+    <path d="M31 27q1-20 19-20t19 20q-8-9-19-8t-19 8" fill="#54392f"/>
+  </symbol>
+  <symbol id="costume-explorer" viewBox="0 0 100 120">
+    <path d="M31 55q19-10 38 0l7 32q-26 12-52 0z" fill="var(--avatar-color,#c8323c)" stroke="#693f36" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M42 52h16l5 37H37z" fill="#f4dfb4" stroke="#693f36" stroke-width="2"/>
+    <path d="M49 54v34M41 67h18M40 77h19" stroke="#a87a48" stroke-width="2"/>
+    <path d="M29 25q3-18 21-18t21 18H29z" fill="#1f4e9c" stroke="#693f36" stroke-width="2.5"/>
+    <path d="M25 25q25-6 50 0l-5 5H30z" fill="#c8323c" stroke="#693f36" stroke-width="2"/>
+    <path d="M72 58l8 3v20l-9-3z" fill="#d3a25c" stroke="#693f36" stroke-width="2"/>
+    <circle cx="50" cy="63" r="2" fill="#c8323c"/>
+  </symbol>
+  <symbol id="costume-scholar" viewBox="0 0 100 120">
+    <path d="M31 55q19-10 38 0l7 32q-26 12-52 0z" fill="var(--avatar-color,#c8323c)" stroke="#693f36" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M39 54l11 10 11-10 6 34H33z" fill="#f3ebd9" stroke="#693f36" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M50 64v24M38 72h24" stroke="#1f4e9c" stroke-width="2.5"/>
+    <path d="M34 22q0-16 16-16t16 16v5H34z" fill="#c8323c" stroke="#693f36" stroke-width="2.5"/>
+    <path d="M30 25h40v6H30z" fill="#1f4e9c" stroke="#693f36" stroke-width="2"/>
+    <path d="M50 6v-4M48 2h4" stroke="#d3a25c" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="64" y="65" width="13" height="19" rx="3" fill="#d3a25c" stroke="#693f36" stroke-width="2"/>
+    <path d="M67 70h7M67 75h7" stroke="#f3ebd9" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="costume-traveler" viewBox="0 0 100 120">
+    <path d="M30 56q20-11 40 0l8 31q-28 12-56 0z" fill="var(--avatar-color,#c8323c)" stroke="#693f36" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M39 54h22l8 34H31z" fill="#1f4e9c" stroke="#693f36" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M50 56v32M41 70h6M53 70h7M41 80h6M53 80h7" stroke="#d3a25c" stroke-width="2"/>
+    <path d="M30 23q2-16 20-16t20 16z" fill="#7a4a35" stroke="#693f36" stroke-width="2.5"/>
+    <path d="M29 18q21-10 42 0v9H29z" fill="#d3a25c" stroke="#693f36" stroke-width="2.5"/>
+    <path d="M34 19h32" stroke="#f3ebd9" stroke-width="2"/>
+    <path d="M27 58q-7 6-9 19l8 4 8-12M73 58q7 6 9 19l-8 4-8-12" fill="none" stroke="var(--avatar-skin,#f1c7a5)" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-smile" viewBox="0 0 100 120">
+    <ellipse cx="42" cy="29" rx="2.2" ry="3" fill="#332921"/><ellipse cx="58" cy="29" rx="2.2" ry="3" fill="#332921"/>
+    <path d="M43 38q7 8 14 0" fill="none" stroke="#a94f4b" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="36" cy="36" r="3" fill="#e98980" opacity=".65"/><circle cx="64" cy="36" r="3" fill="#e98980" opacity=".65"/>
+  </symbol>
+  <symbol id="face-curious" viewBox="0 0 100 120">
+    <ellipse cx="42" cy="29" rx="2.2" ry="3" fill="#332921"/><ellipse cx="58" cy="29" rx="2.2" ry="3" fill="#332921"/>
+    <path d="M43 40q7-4 14 0" fill="none" stroke="#a94f4b" stroke-width="2" stroke-linecap="round"/>
+    <path d="M39 23l6-2M56 21l6 2" stroke="#54392f" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-confident" viewBox="0 0 100 120">
+    <path d="M39 26l6-2M55 24l6 2" stroke="#54392f" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="42" cy="30" rx="2.2" ry="3" fill="#332921"/><ellipse cx="58" cy="30" rx="2.2" ry="3" fill="#332921"/>
+    <path d="M43 39q7 5 14 0" fill="none" stroke="#a94f4b" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+</defs><use href="#avatar-base"/><use href="#costume-traveler"/><use href="#face-confident"/></svg>

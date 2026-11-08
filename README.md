@@ -13,9 +13,17 @@ Gioco statico in italiano per imparare il russo. Si pubblica direttamente con Gi
 - `js/data/audio-voices.js` — registrazioni vocali incorporate e relativi dati.
 - `js/data/family-art.js` — illustrazioni e dati della foto di famiglia.
 - `js/data/world-art.js` — illustrazioni e dati della mappa.
+- `js/data/avatars.js` e `assets/avatars/avatar-kit.svg` — avatar personale: base condivisa, tre costumi sovrapponibili, tre volti e tinta salvati nel browser. `assets/avatars/explorer.svg`, `scholar.svg` e `traveler.svg` sono esportazioni autonome dei tre personaggi.
+- `css/avatar.css` — profilo e presentazione dell’avatar sulla mappa.
 - `audio/` — registrazioni MP3 utilizzate dal gioco.
 - `audio-manifest.json` — inventario e hash SHA-256 delle registrazioni MP3.
 - `.nojekyll` — evita filtri Jekyll durante la pubblicazione.
+
+## Avatar
+
+Il profilo si apre dalla barra della mappa. Nome, costume, espressione, colore dell’abito e carnagione vengono salvati localmente nel browser (`tr-avatar-v1`); non serve un account. I tre costumi usano lo stesso corpo e la stessa griglia del volto, così la pedina sulla tappa attuale riusa le stesse scelte del profilo.
+
+L’avatar è un asset SVG nativo realizzato nel progetto; ImageGen non è stato usato.
 
 ## Genio delle parole
 
