@@ -92,11 +92,6 @@ S.filter(s=>s.lv===2).forEach(s=>{
  else if(d==='p3'||(pk.length===1&&pk[0]==='n3')) s.g='Città, luoghi, trasporti e oggetti';
  else if(pk.length && pk.every(v=>['w','wq','wr','wpron','wf','wmeal','wgeneral','wdrink','w3','w2','w4','w5','n1','n3'].includes(v))) s.g='Ripasso per temi A1';
 });
-// Minigioco narrativo situato: viene inserito subito dopo il gruppo "Famiglia e persone".
-const familyEnd=S.reduce((last,s,i)=>s.lv===2&&s.g==="Famiglia e persone"?i:last,-1);
-if(familyEnd>=0&&!S.some(s=>s.t==="scenario"&&s.n==="La festa in famiglia · Avventura animata")){
- S.splice(familyEnd+1,0,{lv:2,t:"scenario",n:"La festa in famiglia · Avventura animata",g:"Storia interattiva · Festa in famiglia"});
-}
 S.forEach((s,i)=>{if(!s.g&&i>0&&s.lv<3)s.g=s.lv==1?"Ripasso e parole":"Immagini e ripasso"});
 // Le attività di tracciamento delle parole diventano tappe autonome,
 // raccolte in fondo al livello Lessico e separate dai giochi/lezioni.
@@ -112,13 +107,12 @@ Object.assign(f("learn","g2"),{g:h3}),Object.assign(f("game","g2"),{g:h3}),{lv:3
 l3.forEach(z=>S.splice(S.indexOf(z),1));S.splice(at,0,...P)})();
 (()=>{[1,2,3,4].forEach(l=>{const last=S.map((s,i)=>s.lv==l?i:-1).filter(i=>i>=0).pop();S.splice(last+1,0,l==4?{lv:4,t:"quiz",n:"Ripasso dei tuoi errori",k:"rv",rev:1,rv:1,g:"I tuoi errori"}:{lv:l,t:"game",n:"Ripasso dei tuoi errori",rev:1,rv:1,g:"I tuoi errori",m:l==3?1:0})})})();
 
-/* La conclusione della famiglia appartiene al capitolo, dopo tutte le sue attività. */
+/* Mantiene unite le attività del lessico familiare senza inserire il minigioco della foto. */
 const FAMILY_LEGACY_ORDER=S.map(s=>({...s})),FAMILY_KEY_MIGRATIONS=[];
-(()=>{const family=S.filter(s=>s.lv===2&&s.d==='wf'),old=S.find(s=>s.t==='scenario');if(!family.length)return;
-const at=S.indexOf(family[0]),rest=S.filter(s=>!family.includes(s)&&s!==old);
+(()=>{const family=S.filter(s=>s.lv===2&&s.d==='wf');if(!family.length)return;
+const at=S.indexOf(family[0]),rest=S.filter(s=>!family.includes(s));
 for(const s of family){const before={...s};s.g='Famiglia e persone';FAMILY_KEY_MIGRATIONS.push([before,s])}
-const finale=old||{lv:2,t:'scenario'},before={...finale};Object.assign(finale,{lv:2,t:'scenario',n:'Minigioco · La foto di famiglia',g:'Famiglia e persone',familyFinal:true});
-if(old)FAMILY_KEY_MIGRATIONS.push([before,finale]);S.splice(0,S.length,...rest.slice(0,at),...family,finale,...rest.slice(at));
+S.splice(0,S.length,...rest.slice(0,at),...family,...rest.slice(at));
 })();
 
 const ls=k=>{try{return localStorage.getItem(k)}catch(e){return null}},ss=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
@@ -271,7 +265,7 @@ const pw=pool=>{const z={};return[].concat(...pool.map(e=>typeof e=='string'?G[e
 G.ga=[0,1,2,4,5,6].map(i=>G.g[i]);G.gn=[8,9,10,11].map(i=>G.g[i]);G.gm=[0,2,3,4,6,7,8,9,10].map(i=>G.g[i]);G.gx=[["папа","M","papà"],["мужчина","M","uomo"],["дедушка","M","nonno"],["день","M","giorno"],["ночь","F","notte"],["дверь","F","porta"],["имя","N","nome"],["время","N","tempo"]];
 G.n1=G.p1.map(r=>[r[1],...r[2].split(' · '),r[0]]);G.n3=G.p3.map(r=>[r[1],...r[2].split(' · '),r[0]]);G.n2=G.p2.map(r=>[r[1],...r[2].split(' · '),r[0]]);
 const TRACE_TOPICS=[["w","Saluti e formule di cortesia"],["wq","Domande"],["wr","Risposte"],["wpron","Pronomi personali"],["wf","Famiglia e persone"],["wmeal","Pasti"],["wgeneral","Parole generali"],["wdrink","Bevande"],["w3","Cibi"],["n2","Cibo e bevande"],["wfruit","Frutta"],["wveg","Verdura"],["w2","Numeri e quantità"],["w4","Casa e oggetti"],["w5","Lavoro e professioni"],["n1","Animali e natura"],["n3","Città e oggetti"]];TRACE_TOPICS.forEach(([d,tp])=>{const parts=d==='w'?[[0,3],[3,3],[6,Math.max(1,G[d].length-6)]]:Array.from({length:Math.ceil(G[d].length/3)},(_,i)=>[i*3,Math.min(3,G[d].length-i*3)]);parts.forEach(([x,cnt],k)=>{const parte=k+1,gruppo="Tracciamento · "+tp+" · insieme "+parte,lettere={lv:2,t:"trace",n:"Traccia: "+tp+" · insieme "+parte,d,x,cnt,g:gruppo},parole={lv:2,t:"trace",n:"Traccia parole intere: "+tp+" · insieme "+parte,d,x,cnt,wordOnly:true,g:gruppo};let bi=S.findIndex(s=>s.lv===2&&s.t==="build"&&s.d===d&&s.x===x&&s.cnt===cnt);if(bi>=0){S.splice(bi+1,0,lettere,parole);return}const prev=S.reduce((last,s,i)=>s.lv===2&&s.d===d&&(s.t==="build"||s.t==="trace")?i:last,-1);if(prev>=0){S.splice(prev+1,0,{lv:2,t:"build",n:"Ricomponi le parole: "+tp+" · insieme "+parte,d,x,cnt,g:gruppo},lettere,parole);return}const imageKey=d==="n1"?"p1":d==="n2"?"p2":"p3",imageAt=S.reduce((last,s,i)=>s.lv===2&&s.t==="game"&&s.d===imageKey?i:last,-1);S.splice(imageAt+1,0,{lv:2,t:"build",n:"Ricomponi le parole: "+tp+" · insieme "+parte,d,x,cnt,g:gruppo},lettere,parole)})});
-const responseAt=S.reduce((last,s,i)=>s.lv===2&&(s.d==="wr"||String(s.g||"").startsWith("Risposte"))?i:last,-1);if(responseAt>=0&&!S.some(s=>s.akinatorFinal))S.splice(responseAt+1,0,{lv:2,t:"scenario",n:"Arcade · Il genio delle parole",g:"Risposte · Genio russo",akinatorFinal:true});
+
 const EM={"дом":"@house","вода":"@water","хлеб":"@bread","кот":"@cat","книга":"@book","один":"1","два":"2","три":"3","четыре":"4","пять":"5","шесть":"6","семь":"7","восемь":"8","девять":"9","десять":"10","сто":"100","ноль":"0","чай":"@tea","кофе":"@coffee","суп":"@soup","рыба":"@fish","сыр":"@cheese","яблоко":"@apple","вино":"@wine"};
 [...G.n1,...G.n2,...G.n3].forEach(r=>EM[r[0]]=r[3]);
 function mx(pp){const E=R.filter(r=>EM[r[0]]),ni=Math.max(Math.min(E.length,pp>>1,Math.round(pp*.35)),pp-R.length),im=sh(E).slice(0,ni),rest=sh(R.filter(r=>!im.includes(r))).slice(0,pp-2*ni),P=[],f=(r,c,a)=>{const i=R.indexOf(r);return[{k:i,s:0,a:r[0],u:'',c:'',r:i},{k:i,s:1,a,u:'',c,r:i}]};
